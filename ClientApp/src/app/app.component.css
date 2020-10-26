@@ -1,0 +1,67 @@
+#app {
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+  max-height: 100%;
+}
+
+#video {
+  background-color: #000000;
+}
+
+#canvas {
+  display: none;
+}
+
+li {
+  display: inline;
+  padding: 5px;
+}
+.logoText{
+  padding-left:130px;
+}
+
+.razmak{
+  padding-right:50px;
+}
+
+.stepFooter{
+  display: flex!important;
+  flex-direction: column!important;
+
+}
+
+#verifikacija1::after{
+  border-top: 15px solid green;
+}
+
+#verifikacija2::after{
+  border-top: 15px solid red;
+}
+
+
+#okvir{
+  width: 642px;
+  height: 482px;
+  border: #000000 1px solid;
+  border-style: dotted;
+  margin: 0 auto;
+  background-size: 200px 150px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tekst{
+  font-size: large;
+  font-weight: bold;
+}
+
+#success{
+  /* background-color: #537cbd; */
+  background-color: green;
+    color: white;
+ padding-top: 10px;
+ width: 70%;
+ padding-bottom: 10px;
+ border-radius: 3px;
+}

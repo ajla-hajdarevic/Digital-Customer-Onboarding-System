@@ -1,0 +1,491 @@
+<div style="height: 100vh; display: flex; flex-direction: column;" class="futer">
+<header id="header" class="header">
+    <div class="container-fluid themed-container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="logo">
+                    <!-- <img src="./../assets/images/logo.svg" alt="Logo Alt" /> -->
+                </div>
+                <div class="logoText">
+                    <h1>Digital Customer Onboarding</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header><!-- /header -->
+<section class="section">
+    <div class="stepsHeader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="stepsListHeader">
+                        <ul>
+                            <li id="step1Caption" class="active">
+                                <div class="stepTitleButton">
+                                    <div class="stepNumber">1</div>
+                                    <div class="stepLabel">
+                                        Capture ID
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="step2Caption">
+                                <div class="stepTitleButton">
+                                    <div class="stepNumber">2</div>
+                                    <div class="stepLabel">
+                                        Review Details
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="step3Caption">
+                                <div class="stepTitleButton">
+                                    <div class="stepNumber">3</div>
+                                    <div class="stepLabel">
+                                        Take a Selfie
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="step4Caption">
+                                <div class="stepTitleButton">
+                                    <div class="stepNumber">4</div>
+                                    <div class="stepLabel">
+                                        Verify Identity
+
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="stepsBody step1" id="step1" style="display: block;">
+        <div class="mainContent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h2>Front Side</h2>
+                                <div class="card">
+                                    <div class="avatar-upload">
+                                        <div class="avatar-preview">
+                                            <div appDnd class="frontImg-container" (fileDropped)="onFileDropped($event)" id="frontImgUpload">
+                                                <input type="file" #imageUpload id="imageUpload" multiple id="imageUpload"
+                                                       accept=".png, .jpg, .jpeg" name="image" (change)="fileProgress($event)" />
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="63" height="64" viewBox="0 0 63 64">
+                                                    <g fill="#3B454F" fill-rule="nonzero">
+                                                        <path d="M42.656 15.135a1.953 1.953 0 0 1-1.391-.578L31.5 4.795l-9.765 9.762a1.97 1.97 0 1 1-2.785-2.785L30.106.616a1.97 1.97 0 0 1 2.785 0l11.157 11.156a1.97 1.97 0 0 1-1.392 3.363z" />
+                                                        <path d="M31.5 36.791a1.97 1.97 0 0 1-1.969-1.969V2.01a1.97 1.97 0 0 1 3.938 0v32.812a1.97 1.97 0 0 1-1.969 1.969z" />
+                                                        <path d="M55.781 63.041H7.22A7.225 7.225 0 0 1 0 55.822V41.385a4.599 4.599 0 0 1 4.594-4.594h7.234a4.567 4.567 0 0 1 4.402 3.276l2.814 9.382a.658.658 0 0 0 .628.467h23.656a.658.658 0 0 0 .628-.467l2.814-9.385a4.572 4.572 0 0 1 4.402-3.273h7.234A4.599 4.599 0 0 1 63 41.385v14.437a7.225 7.225 0 0 1-7.219 7.219zM4.594 40.729a.656.656 0 0 0-.657.656v14.437a3.286 3.286 0 0 0 3.282 3.282H55.78a3.286 3.286 0 0 0 3.282-3.282V41.385a.656.656 0 0 0-.657-.656h-7.234a.65.65 0 0 0-.628.467L47.73 50.58a4.628 4.628 0 0 1-4.402 3.274H19.672a4.567 4.567 0 0 1-4.402-3.276l-2.814-9.382a.65.65 0 0 0-.628-.467H4.594z" />
+                                                    </g>
+                                                </svg>
+
+                                                <h3>Drag and drop file here</h3>
+                                                <h3>or</h3>
+                                                <label for="imageUpload">Browse for file</label>
+
+
+
+
+
+                                            </div>
+                                            <div id="imagePreviewFront" style="background-image: url(./../assets/images/card-bg.svg);">
+                                                <!-- <div class="delete" (click)="deleteImgFront(i)">
+                                                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18">
+                                                    <path fill="#B1B1B1" fill-rule="nonzero"
+                                                      d="M1 16c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H3c-1.1 0-2 .9-2 2v10zm3.17-7.83a.996.996 0 0 1 1.41 0L7 9.59l1.42-1.42a.996.996 0 1 1 1.41 1.41L8.41 11l1.42 1.42a.996.996 0 1 1-1.41 1.41L7 12.41l-1.42 1.42a.996.996 0 1 1-1.41-1.41L5.59 11 4.17 9.58a.996.996 0 0 1 0-1.41zM10.5 1L9.79.29C9.61.11 9.35 0 9.09 0H4.91c-.26 0-.52.11-.7.29L3.5 1H1c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1h-2.5z" />
+                                                  </svg>
+                                                </div> -->
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="avatar-preview">
+                                                                    <div id="imagePreviewFront" style="background-image: url(./../assets/images/card-bg.svg);">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="avatar-edit" id="frontImgUpload">
+                                                                    <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" name="image" (change)="fileProgress($event)"/>
+                                                                    <label for="imageUpload">Browse</label>
+                                                                </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <h2>Back Side</h2>
+                                <div class="card">
+                                    <div class="avatar-upload">
+                                        <div class="avatar-preview">
+                                            <div appDnd class="frontImg-container" (fileDropped)="onBackFileDropped($event)"
+                                                 id="backImgUpload">
+                                                <input type="file" #imageUpload id="imageUpload" multiple id="imageUpload"
+                                                       accept=".png, .jpg, .jpeg" name="image" (change)="fileBackProgress($event)" />
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="63" height="64" viewBox="0 0 63 64">
+                                                    <g fill="#3B454F" fill-rule="nonzero">
+                                                        <path d="M42.656 15.135a1.953 1.953 0 0 1-1.391-.578L31.5 4.795l-9.765 9.762a1.97 1.97 0 1 1-2.785-2.785L30.106.616a1.97 1.97 0 0 1 2.785 0l11.157 11.156a1.97 1.97 0 0 1-1.392 3.363z" />
+                                                        <path d="M31.5 36.791a1.97 1.97 0 0 1-1.969-1.969V2.01a1.97 1.97 0 0 1 3.938 0v32.812a1.97 1.97 0 0 1-1.969 1.969z" />
+                                                        <path d="M55.781 63.041H7.22A7.225 7.225 0 0 1 0 55.822V41.385a4.599 4.599 0 0 1 4.594-4.594h7.234a4.567 4.567 0 0 1 4.402 3.276l2.814 9.382a.658.658 0 0 0 .628.467h23.656a.658.658 0 0 0 .628-.467l2.814-9.385a4.572 4.572 0 0 1 4.402-3.273h7.234A4.599 4.599 0 0 1 63 41.385v14.437a7.225 7.225 0 0 1-7.219 7.219zM4.594 40.729a.656.656 0 0 0-.657.656v14.437a3.286 3.286 0 0 0 3.282 3.282H55.78a3.286 3.286 0 0 0 3.282-3.282V41.385a.656.656 0 0 0-.657-.656h-7.234a.65.65 0 0 0-.628.467L47.73 50.58a4.628 4.628 0 0 1-4.402 3.274H19.672a4.567 4.567 0 0 1-4.402-3.276l-2.814-9.382a.65.65 0 0 0-.628-.467H4.594z" />
+                                                    </g>
+                                                </svg>
+
+                                                <h3>Drag and drop file here</h3>
+                                                <h3>or</h3>
+                                                <label for="imageUpload">Browse for file</label>
+                                            </div>
+                                            <div id="imagePreviewBack" style="background-image: url(./../assets/images/card-bg.svg);">
+                                                <!-- <div class="delete" (click)="deleteImgBack(i)">
+                                                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18">
+                                                    <path fill="#B1B1B1" fill-rule="nonzero"
+                                                      d="M1 16c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H3c-1.1 0-2 .9-2 2v10zm3.17-7.83a.996.996 0 0 1 1.41 0L7 9.59l1.42-1.42a.996.996 0 1 1 1.41 1.41L8.41 11l1.42 1.42a.996.996 0 1 1-1.41 1.41L7 12.41l-1.42 1.42a.996.996 0 1 1-1.41-1.41L5.59 11 4.17 9.58a.996.996 0 0 1 0-1.41zM10.5 1L9.79.29C9.61.11 9.35 0 9.09 0H4.91c-.26 0-.52.11-.7.29L3.5 1H1c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1h-2.5z" />
+                                                  </svg>
+                                                </div> -->
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="info-badge">
+                                    <span>Select</span> files or <span>Drag and drop</span> ID card.
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="termsPolicy">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label class="chkboxContainer">
+                                I agree my biometric information and copy of my ID can be used for the purpose of customer onboarding process and opening an account.
+                                <input type="checkbox" (change)="checkValue($event)">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stepButtons step1Button">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <button type="button" class="btn btn-primary" (click)="onContinue()" [disabled]="btnContinue"
+                                    title="Please agree with our privacy policy to proceed">
+                                Continue
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="stepsBody step2" id="step2" style="display: none;">
+        <div class="mainContent mt-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>
+                                        Name
+                                    </label>
+                                    <input type="text" name="name" readonly class="form-control" value="AJLA">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>
+                                        Surname
+                                    </label>
+                                    <input type="text" name="surname" readonly class="form-control" value="HAJDAREVIC">
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>
+                                        Date of Birth
+                                    </label>
+                                    <input type="text" name="dob" readonly class="form-control" value={{ocrResult.dob}}>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>
+                                        Id Card
+                                    </label>
+                                    <input type="text" name="dob" readonly class="form-control" value={{ocrResult.idCard}}>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                              <div class="form-group">
+                                  <label>
+                                      Serial Number
+                                  </label>
+                                  <input type="text" name="sid" readonly class="form-control" value={{ocrResult.sid}}>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>
+                                    Valid until
+                                </label>
+                                <input type="text" name="validUntil" readonly class="form-control" value={{ocrResult.validUntil}}>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                          <div class="form-group">
+                              <label>
+                                  Citizenship
+                              </label>
+                              <input type="text" name="validUntil" readonly class="form-control" value="BIH">
+                          </div>
+                      </div>
+                      <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>
+                                Place of Birth
+                            </label>
+                            <input type="text" name="birthPlace" readonly class="form-control" value={{ocrResult.birthPlace}}>
+                        </div>
+                    </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="info-badge pt-3 pb-3">Please <span>review</span> all the texts and click <span>Continue.</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stepButtons step2Button">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <button type="button" class="btn btn-primary btn-border" (click)="onStartOver()">Start Over</button>
+                            <button type="button" class="btn btn-primary" title="" (click)="onContinueNext()">Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="stepsBody step3" style="display: none;">
+        <div class="mainContent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-12 text-center">
+                                  <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="info-badge">
+                                    <span>Activate</span> camera and <span>Capture</span> a selife.
+                                </div>
+                            </div>
+                        </div>
+                                <div class="card selfiBox">
+                                    <div class="avatar-upload">
+
+
+                                        <div class="avatar-preview">
+                                            <div id="imagePreview">
+
+
+                                              <div id="okvir" class="d-center" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Line-style-icons-camera.svg/1280px-Line-style-icons-camera.svg.png);">
+                                                <!-- <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-camera m-auto" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                  <path fill-rule="evenodd" d="M15 12V6a1 1 0 0 0-1-1h-1.172a3 3 0 0 1-2.12-.879l-.83-.828A1 1 0 0 0 9.173 3H6.828a1 1 0 0 0-.707.293l-.828.828A3 3 0 0 1 3.172 5H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"/>
+                                                  <path fill-rule="evenodd" d="M8 11a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                                                  <path d="M3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                                                </svg> -->
+                                                <div *ngIf="faceApiResponse | async as response; else waiting">
+                                               
+                                                    <img *ngIf="imageString" [src]="imageString" alt="imageString" >
+                                                 
+                                                    <input type="hidden" id="faceId2value" value="{{response[0].faceId}}">
+                                                </div>
+                                                <!-- End Modal -->
+                                              </div>
+
+
+
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     
+                    </div>
+                </div>
+            </div>
+            <div class="stepButtons step3Button">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <button type="button" class="btn btn-primary btn-border" (click)="onStartOver()">Start Over</button>
+                            <button type="button" class="btn btn-primary" (click)="onCaptureImage()" title="">Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="stepsBody step4" style="display: none;">
+        <div class="mainContent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <div class="errorMsg mt-4">
+                          <div *ngIf="facesResult == 'Identity invalid'">
+                          <div class="notValid message" style="background-color: red" id="verifikacija2">
+                            <img src={{imageURL}} alt="" class="icon"><span>{{facesResult}}</span>
+                   </div>
+                  </div>
+
+
+                  <div *ngIf="facesResult == 'Identity valid'">
+                    <div class="notValid message" style="background-color: green" id="verifikacija1">
+                      <img src={{imageURL}} alt="" class="icon"><span>{{facesResult}}</span>
+             </div>
+            </div>
+                        </div>
+                        <div class="row pt-5">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>
+                                        Name
+                                    </label>
+                                    <input type="text" name="name" readonly class="form-control" value="AJLA">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>
+                                        Surname
+                                    </label>
+                                    <input type="text" name="surname" readonly class="form-control" value="HAJDAREVIC">
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>
+                                        Date of Birth
+                                    </label>
+                                    <input type="text" name="dob" readonly class="form-control" value={{ocrResult.dob}}>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>
+                                        Id Card
+                                    </label>
+                                    <input type="text" name="dob" readonly class="form-control" value={{ocrResult.idCard}}>
+                                </div>
+                            </div>
+                            
+                          <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>
+                                    Serial Number
+                                </label>
+                                <input type="text" name="sid" readonly class="form-control" value={{ocrResult.sid}}>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                          <div class="form-group">
+                              <label>
+                                  Valid until
+                              </label>
+                              <input type="text" name="validUntil" readonly class="form-control" value={{ocrResult.validUntil}}>
+                          </div>
+                      </div>
+                      <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>
+                                Citizenship
+                            </label>
+                            <input type="text" name="validUntil" readonly class="form-control" value="BIH">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="form-group">
+                          <label>
+                              Place of Birth
+                          </label>
+                          <input type="text" name="birthPlace" readonly class="form-control" value={{ocrResult.birthPlace}}>
+                      </div>
+                  </div>
+
+                        </div>
+                        <div *ngIf="div1" class="info-badge d-block tekst" id="success" style="font-weight: lighter;">
+                          <span>{{opis}}</span>
+                      </div>
+                      <div *ngIf="facesResult == 'Identity invalid'" class="info-badge d-block tekst">
+                        <span>{{opis}}</span>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="stepButtons step3Button">
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-12 text-center">
+                  <div *ngIf="facesResult == 'Identity invalid'">
+                    <button type="button" class="btn btn-primary btn-border" (click)="onStartOver()">Try again</button>
+                  </div>
+                  <div *ngIf="facesResult == 'Identity valid'">
+                    <button type="button" class="btn btn-primary" (click)="alertFunction()" title="">Complete</button>
+                  </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+    <div class="stepFooter pt-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>© 2020 Digital Onboarding Process. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
